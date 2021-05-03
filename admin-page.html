@@ -65,7 +65,6 @@
 		</div>
 		<!-- Page Main -->
 		<div class="main">
-			<!-- Top bar -->
 			<div class="topbar">
 				<div class="toggle" onclick="toggleMenu();"></div>
 				<div class="search">
@@ -88,21 +87,18 @@
 					<img src="assets/images/avt.jpg">
 				</div>
 			</div>
-			<!-- Main content -->
-			
 		</div>
 	</div>
-	<!-- JS side bar -->
 	<script>
 		function toggleMenu() {
 			let toggle = document.querySelector('.toggle');
 			let navigation = document.querySelector('.navigation');
 			let main = document.querySelector('.main');
 			toggle.classList.toggle('active');
-			navigation.classList.tolggle('active');
+			navigation.classList.toggle('active');
 			main.classList.toggle('active');
 		}
-		/*js clock*/
+
 		function clock() {
 			let hour = document.getElementById('hour');
 			let minute = document.getElementById('minute');
@@ -116,7 +112,7 @@
 
 			if (h > 12) {
 				h = h - 12;
-				var am = 'PM'
+				var am = ' PM'
 			}
 
 			h = (h < 10 ) ? '0' + h : h;
