@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet/less" type="text/css" href="assets/less/dashboard.less">
+	<script src="assets/js/less.js" type="text/javascript"></script>
+	<script src="https://kit.fontawesome.com/62ee657f1a.js" crossorigin="anonymous"></script>
+	<title>Admin Dashboard</title>
+</head>
+<body>
+	<div class="topbar">
+		<div class="toggle" onclick="toggleMenu();"></div>
+		<div class="search">
+			<label>
+				<input type="text" name="" placeholder="Search here...">
+				<i class="fas fa-search"></i>
+			</label>
+		</div>
+		<div class="clock">
+			<div class="container">
+				<h4 id="hour">00</h4>
+				<h4 class="dot">:</h4>
+				<h4 id="minute">00</h4>
+				<h4 class="dot">:</h4>
+				<h4 id="second">00</h4>
+				<span id="ampm"> AM</span>
+			</div>
+		</div>
+		<div class="user">
+			<img src="assets/images/avt.jpg">
+		</div>
+	</div>
+</body>
+</html>

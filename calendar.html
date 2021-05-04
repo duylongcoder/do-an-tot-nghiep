@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet/less" type="text/css" href="assets/less/dashboard.less">
+	<link rel="stylesheet" href="assets/css/dycalendar.css">
+	<script src="assets/js/less.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/62ee657f1a.js" crossorigin="anonymous"></script>
+	<title>Admin Dashboard</title>
+</head>
+<body>
+	<div class="container">
+		<!-- Sidebar -->
+		<div id="navigation"></div>
+		<!-- End sidebar -->
+		<!-- Top bar -->
+		<div class="main">
+			<div id="topbar"></div>
+			<!-- End top bar -->
+			<!-- Page Main -->
+			<div class="calendar">
+				<section>
+					<div class="box">
+						<div class="container">
+							<div id="dycalendar"></div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<!-- End page main -->
+		</div>
+	</div>
+	<script src="assets/js/dycalendar.js"></script>
+	<script>
+		function toggleMenu() {
+			let toggle = document.querySelector('.toggle');
+			let navigation = document.querySelector('.navigation');
+			let main = document.querySelector('.main');
+			toggle.classList.toggle('active');
+			navigation.classList.toggle('active');
+			main.classList.toggle('active');
+		}
+
+		function clock() {
+			let hour = document.getElementById('hour');
+			let minute = document.getElementById('minute');
+			let second = document.getElementById('second');
+			let ampm = document.getElementById('ampm');
+
+			let h = new Date().getHours();
+			let m = new Date().getMinutes();
+			let s = new Date().getSeconds();
+			var am = 'AM';
+
+			if (h > 12) {
+				h = h - 12;
+				var am = ' PM'
+			}
+
+			h = (h < 10 ) ? '0' + h : h;
+			m = (m < 10 ) ? '0' + m : m;
+			s = (s < 10 ) ? '0' + s : s;
+
+			hour.innerHTML = h;
+			minute.innerHTML = m;
+			second.innerHTML = s;
+			ampm.innerHTML = am;
+		}
+		var interval = setInterval(clock, 1000);
+
+		$(document).ready(function() {
+          $('#navigation').load("navigation.html");
+        });
+        $(document).ready(function() {
+          $('#topbar').load("topbar.html");
+        });
+	</script>
+	<script>
+		dycalendar.draw({
+        	target: '#dycalendar',
+        	type: 'month',
+        	dayformat: 'full',
+        	monthformat: 'full',
+        	highlighttargetdate: true,
+        	prevnext: 'show';
+        })
+	</script>
+</body>
+</html>
